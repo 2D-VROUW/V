@@ -16,6 +16,11 @@ public class EnemyMove : MonoBehaviour
     private bool isChasing;
     private int nextMove;
 
+    NER EA;
+    void Start()
+    {
+        EA = GetComponentInChildren<NER>();
+    }
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -59,7 +64,7 @@ public class EnemyMove : MonoBehaviour
         Vector2 frontVector = new Vector2(rigid.position.x + nextMove * 0.5f, rigid.position.y);
         Debug.DrawRay(frontVector, Vector3.down, Color.green);
 
-        RaycastHit2D rayHit = Physics2D.Raycast(frontVector, Vector3.down, 2f, LayerMask.GetMask("Platform"));
+        RaycastHit2D rayHit = Physics2D.Raycast(frontVector, Vector3.down, 2f, LayerMask.GetMask("Ground"));
 
         if (rayHit.collider == null)
         {
@@ -84,7 +89,7 @@ public class EnemyMove : MonoBehaviour
     private void StopAndPrepareAttack()
     {
         rigid.velocity = Vector2.zero;
-        Debug.Log("플레이어 공격");
+        EA.Start();
     }
 
     private void Think()
