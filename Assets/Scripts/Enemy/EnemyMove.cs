@@ -10,6 +10,7 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private float speed = 2.5f;
     [SerializeField] private float followDistance = 5f;    // 추격 시작 거리
     [SerializeField] private float stopChaseRange = 2f;    // 추적 멈출 거리 (공격 준비 거리)
+    [SerializeField] private int Hp;
 
     private Transform player;
     private bool isPlayerOnSamePlatform;
@@ -110,4 +111,39 @@ public class EnemyMove : MonoBehaviour
     {
         isPlayerOnSamePlatform = Mathf.Abs(player.position.y - transform.position.y) < 0.5f;
     }
+
+    // 2024/11/14 남정현 적 hp 및 사망 추가
+
+    // 충돌 감지
+    // 이거 istrigger로 가면 사거리가 trigger라서 플레이어가 적 사거리를 때려도 적이 죽어버린다
+    // collision으로 가면 총알과 검이 둘 다 trigger 여서 적의 체력이 닳지 않는다
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Sword"))
+        {
+            TakeDamage(2);  // 칼 데미지 2
+        }
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            TakeDamage(1);  // 총 데미지 1
+            StartCoroutine("Slow");
+        }
+    }
+
+    // 데미지 사망
+    private void TakeDamage(int damage)
+    {
+        Hp -= damage;
+        if (Hp <= 0)
+            Destroy(this.gameObject);
+    }
+
+    // 슬로우
+    private IEnumerator Slow()
+    {
+        speed -= 1.5f;
+        yield return new WaitForSeconds(1.5f);
+        speed += 1.5f;
+    }
+
 }

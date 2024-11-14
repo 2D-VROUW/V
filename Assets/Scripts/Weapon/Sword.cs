@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
+    PlayerAttack PA;
+
     public GameObject player;
     public GameObject strike1;
     public GameObject strike2;
     public GameObject strike3;
 
     private int whatSwordAttack = 0;
-    private SwordStrike swordScript;
     private Vector3 strikeDirection;
     public void doSwordAttack()
     {
@@ -44,9 +45,9 @@ public class Sword : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         whatSwordAttack = 0;
     }
+    
     private void firstSword()
     {
-        Debug.Log("첫번째");
         GameObject a = Instantiate(strike1, transform.position, transform.rotation);
         Destroy(a, 1f);
         if (player.transform.position.x < this.transform.position.x)
@@ -62,8 +63,6 @@ public class Sword : MonoBehaviour
     }
     private void secondSword()
     {
-        Debug.Log("두번째");
-        
         if (player.transform.position.x < this.transform.position.x)
         {
             this.transform.position += transform.right * 3f;
@@ -85,7 +84,6 @@ public class Sword : MonoBehaviour
     }
     private void thirdSword()
     {
-        Debug.Log("세번째");
         GameObject c = Instantiate(strike3, transform.position, transform.rotation);
         Destroy(c, 1f);
         player.transform.position += transform.up * 2f;

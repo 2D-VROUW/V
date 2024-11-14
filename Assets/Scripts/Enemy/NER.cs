@@ -6,11 +6,15 @@ public class NER : MonoBehaviour
 {
     public GameObject bullet;
     public GameObject player;
-    private Bullet bulletScript;
-    private Vector3 bulletDirection;
+    //private Bullet bulletScript;
+    //private Vector3 bulletDirection;
 
     public void Start()
     {
         Debug.Log("플레이어 공격");
+    }
+    public void Invoke()
+    {
+        Debug.Log("쏠 수 있어!");
     }
 }

@@ -18,7 +18,6 @@ public class Gun : MonoBehaviour
     // 총알 발사 메소드
     public void doGunAttack()
     {
-        Debug.Log("총 발사");
         if (player.transform.position.x < this.transform.position.x)
         {
             bulletDirection = -transform.right;
