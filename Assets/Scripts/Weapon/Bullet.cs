@@ -20,6 +20,11 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
+        {
+            EnemyMove EA = collision.GetComponent<EnemyMove>();
             Destroy(this.gameObject);
+            EA.TakeDamage(1);
+            EA.StartCoroutine("Slow");
+        }     
     }
 }

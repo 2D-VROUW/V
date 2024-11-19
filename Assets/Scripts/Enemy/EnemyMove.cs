@@ -117,33 +117,22 @@ public class EnemyMove : MonoBehaviour
     // 충돌 감지
     // 이거 istrigger로 가면 사거리가 trigger라서 플레이어가 적 사거리를 때려도 적이 죽어버린다
     // collision으로 가면 총알과 검이 둘 다 trigger 여서 적의 체력이 닳지 않는다
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Sword"))
-        {
-            TakeDamage(2);  // 칼 데미지 2
-        }
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            TakeDamage(1);  // 총 데미지 1
-            StartCoroutine("Slow");
-        }
-    }
+    
 
     // 데미지 사망
-    private void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
+        Debug.Log("아야");
         Hp -= damage;
         if (Hp <= 0)
             Destroy(this.gameObject);
     }
 
     // 슬로우
-    private IEnumerator Slow()
+    public IEnumerator Slow()
     {
         speed -= 1.5f;
         yield return new WaitForSeconds(1.5f);
         speed += 1.5f;
     }
-
 }
