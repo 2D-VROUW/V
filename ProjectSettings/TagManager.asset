@@ -6,8 +6,6 @@ TagManager:
   tags:
   - Rope
   - Enemy
-  - Bullet
-  - Sword
   layers:
   - Default
   - TransparentFX

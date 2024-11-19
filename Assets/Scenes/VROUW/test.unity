@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 37380830}
   m_Layer: 7
   m_Name: Strike1
-  m_TagString: Sword
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -915,7 +915,7 @@ GameObject:
   - component: {fileID: 639222595}
   m_Layer: 7
   m_Name: Bullet
-  m_TagString: Bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1538,7 +1538,7 @@ GameObject:
   - component: {fileID: 1078348852}
   m_Layer: 7
   m_Name: Strike2
-  m_TagString: Sword
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2983,7 +2983,7 @@ GameObject:
   - component: {fileID: 1997908591}
   m_Layer: 7
   m_Name: Strike3
-  m_TagString: Sword
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
