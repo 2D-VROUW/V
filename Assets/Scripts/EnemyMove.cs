@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
@@ -142,4 +143,11 @@ public class EnemyMove : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         speed += 1.5f;
     }
+    public IEnumerator Buff()
+    {
+        speed = 6f;
+        yield return new WaitForSeconds(3f);
+        speed = 2.5f;
+    }
 }
+
