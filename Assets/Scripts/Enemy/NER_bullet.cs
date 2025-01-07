@@ -1,21 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class NER_bullet : MonoBehaviour
 {
     [SerializeField] private float bulletSpeed = 20f;
-    private Vector3 direction;
+    private Vector3 moveDirection;
     
     //방향 설정
     public void SetDirection(Vector3 dir)
     {
-        direction = dir.normalized;
+        moveDirection = dir.normalized;
     }
 
     void Update()
     {
-        transform.Translate(direction * bulletSpeed * Time.deltaTime);
+        transform.position += moveDirection * bulletSpeed * Time.deltaTime;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

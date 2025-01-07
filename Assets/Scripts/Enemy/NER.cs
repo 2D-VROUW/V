@@ -66,8 +66,9 @@ public class NER : EnemyMove
     {
         Vector3 directionToPlayer = target.transform.position - transform.position;
         directionToPlayer.z = 0f;
+        directionToPlayer.Normalize();
 
-        GameObject cpy_bullet = Instantiate(NER_bullet, transform.position, transform.rotation);
+        GameObject cpy_bullet = Instantiate(NER_bullet, transform.position, Quaternion.identity);
         Destroy(cpy_bullet, 5f);
 
         NER_bullet bulletComponent = cpy_bullet.GetComponent<NER_bullet>();
