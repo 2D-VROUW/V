@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{BC156427-EC69-C310-9D61-883A326D92EB}</ProjectGuid>
+    <ProjectGuid>{191A5F54-852A-170D-3BB5-B208AAD931C9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\Enemy\Bard.cs" />
     <Compile Include="Assets\Scripts\Player\swordStrike.cs" />
     <Compile Include="Assets\Scripts\Enemy\BucklerStats.cs" />
+    <Compile Include="Assets\Scripts\PlayerShip.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
