@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NER_bullet : MonoBehaviour
 {
-    [SerializeField] private float bulletSpeed = 20f;
+    [SerializeField] private float bulletSpeed = 10f;
     private Vector3 direction;
     
     //방향 설정
@@ -15,7 +15,7 @@ public class NER_bullet : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(direction * bulletSpeed * Time.deltaTime);
+        transform.position += direction * bulletSpeed * Time.deltaTime;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

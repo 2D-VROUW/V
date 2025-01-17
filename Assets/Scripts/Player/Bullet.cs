@@ -29,7 +29,6 @@ public class Bullet : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             EnemyMove EA = collision.GetComponent<EnemyMove>();
-            Destroy(this.gameObject);
 
             if (EA != null)
             {
